@@ -20,5 +20,5 @@ Route::get('/', function()
 Route::get('authors', array('uses' => 'AuthorsController@getIndex'));
 
 // laravel 3.2
-//Route::get('authors', array('uses' => 'author@index'));
+//Route::get('authors', array('uses' => 'authors@index'));
 
