@@ -1,4 +1,4 @@
-### Laravel install
+# Laravel install
 
 PHP 5.3.3
 Laravel v4.0.7
@@ -9,14 +9,14 @@ $ php composer.phar install
 $ php composer.phar create-project laravel/laravel laravel-tutorial --prefer-dist
 ```
 
-## Error
+### Error
 ```
 $ php artisan migrate:reset 
 PHP Fatal error:  Class 'AddAuthors' not found in /src/cakephp/laravel-tutorial/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php on line 301
 {"error":{"type":"Symfony\\Component\\Debug\\Exception\\FatalErrorException","message":"Class 'AddAuthors' not found","file":"\/src\/cakephp\/laravel-tutorial\/vendor\/laravel\/framework\/src\/Illuminate\/Database\/Migrations\/Migrator.php","line":301}}
 ````
-## Solution
-[[http://stackoverflow.com/questions/17174463/laravel-4-migrate-rollback-problems?answertab=oldest#tab-top]]
+### Solution
+http://stackoverflow.com/questions/17174463/laravel-4-migrate-rollback-problems?answertab=oldest#tab-top
 
 
 
