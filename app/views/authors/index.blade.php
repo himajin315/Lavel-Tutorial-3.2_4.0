@@ -1,12 +1,13 @@
-<h1>Author Home Page</h1>
+@extends('layouts.default')
 
 
-@if(isset($name))
-   {{ $name }}<br/>
-@else
-   No name given
-@endif
+@section('content')
+  <h1>Author Home Page</h1>
 
-{{ $age }}<br />
-{{ $location }}<br />
-{{ $specialty }}<br />
+  <ul>
+  @foreach($authors as $author)
+    <li>{{ link_to_route('author', $author->name, array('id'=>$author->id)) }}</li>
+  @endforeach
+  </ul>
+
+@stop

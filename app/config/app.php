@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost/laravel-tutorial/public/',
+	'url' => 'http://localhost/laravel-tutorial/',
 
 	/*
 	|--------------------------------------------------------------------------
