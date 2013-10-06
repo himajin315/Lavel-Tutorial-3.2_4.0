@@ -19,8 +19,36 @@ class AddAuthors extends Migration {
 	  ));
 
 	  DB::table('authors')->insert(array(
-	     'name'=>'Author Number 2',
-	     'bio'=>'Author Number 2 is a really great author as well.',
+	     'name'=>'Mary Lancaster',
+	     'bio'=>'Mary Lancaster is a really great author as well.',
+	     'created_at'=>date('Y-m-d H:m:s'),
+	     'updated_at'=>date('Y-m-d H:m:s')					     
+	  ));
+
+	  DB::table('authors')->insert(array(
+	     'name'=>'Kenny Yuen',
+	     'bio'=>'Kenny Yuen is a really great author as well.',
+	     'created_at'=>date('Y-m-d H:m:s'),
+	     'updated_at'=>date('Y-m-d H:m:s')					     
+	  ));
+
+	  DB::table('authors')->insert(array(
+	     'name'=>'Mary Wells',
+	     'bio'=>'Mary Wells is a really great author as well.',
+	     'created_at'=>date('Y-m-d H:m:s'),
+	     'updated_at'=>date('Y-m-d H:m:s')					     
+	  ));
+
+	  DB::table('authors')->insert(array(
+	     'name'=>'Jan Doe',
+	     'bio'=>'Jan Doe is a really great author as well.',
+	     'created_at'=>date('Y-m-d H:m:s'),
+	     'updated_at'=>date('Y-m-d H:m:s')					     
+	  ));
+
+	  DB::table('authors')->insert(array(
+	     'name'=>'Bill Bo',
+	     'bio'=>'Bill Bo is a really great author as well.',
 	     'created_at'=>date('Y-m-d H:m:s'),
 	     'updated_at'=>date('Y-m-d H:m:s')					     
 	  ));
@@ -35,8 +63,12 @@ class AddAuthors extends Migration {
 	 */
 	public function down()
 	{
-	  DB::table('authors')->where('name','=','Andrew Perkins')->delete();
-	  DB::table('authors')->where('name','=','Author Number 2')->delete();
+	  DB::table('authors')->delete(1);
+	  DB::table('authors')->delete(2);
+	  DB::table('authors')->delete(3);
+	  DB::table('authors')->delete(4);
+	  DB::table('authors')->delete(5);
+	  DB::table('authors')->delete(6);
 	}
 
 }
