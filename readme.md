@@ -1,4 +1,4 @@
-### Laravel インストール
+### Laravel install
 
 PHP 5.3.3
 Laravel v4.0.7
