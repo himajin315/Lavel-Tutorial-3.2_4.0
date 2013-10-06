@@ -17,7 +17,9 @@ Route::get('/', function()
 });
 
 // laravel 4.0
-Route::get('authors', array('uses' => 'AuthorsController@getIndex'));
+Route::get('authors', array('as'=>'authors', 'uses' => 'AuthorsController@getIndex'));
+Route::get('author/{id}', array('as'=>'author', 'uses' => 'AuthorsController@getView'));
+
 
 // laravel 3.2
 //Route::get('authors', array('uses' => 'author@index'));

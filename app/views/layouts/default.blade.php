@@ -4,6 +4,6 @@
    <title>{{$title}}</title>
 </haed>
 <body>
-   {{ $content }}
+   @yield('content')
 </body>
 </html>

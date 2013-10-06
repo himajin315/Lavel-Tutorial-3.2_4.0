@@ -26,7 +26,7 @@ class CreateAuthorsTable extends Migration {
 	 */
 	public function down()
 	{
-	  Scheme::drop('authors');
+	  Schema::drop('authors');
 	}
 
 }
