@@ -26,12 +26,18 @@ class AuthorsController extends BaseController {
 
   public function postCreate()
   {
-    Author::create(array(
-      'name'=>Input::get('name'),
-      'bio'=>Input::get('bio')
-    ));
-    return Redirect::route('authors')
-      ->with('message','The author was created successfully!');
+    $validation = Author::validate(Input::all());
+
+    if ($validation->fails()){
+      return Redirect::route('new_author')->withErrors($validation)->withInput();
+    } else {
+      Author::create(array(
+        'name'=>Input::get('name'),
+        'bio'=>Input::get('bio')
+      ));
+      return Redirect::route('authors')
+        ->with('message','The author was created successfully!');
+    }
    }
 }
 
