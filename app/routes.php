@@ -23,6 +23,7 @@ Route::get('authors/new', array('as'=>'newAuthor', 'uses' => 'AuthorsController@
 Route::post('authors/create', array('uses' => 'AuthorsController@postCreate'));
 Route::get('author/{id}/edit', array('as'=>'editAuthor', 'uses' => 'AuthorsController@getEdit'));
 Route::put('author/update', array('uses' => 'AuthorsController@putUpdate'));
+Route::delete('author/delete', array('uses' => 'AuthorsController@deleteDestroy'));
 
 
 // laravel 3.2

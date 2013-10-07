@@ -70,5 +70,14 @@ class AuthorsController extends BaseController {
     }
   }
 
+  public function deleteDestroy()
+  {
+    //Author::find(Input::get('id'))->delete();
+    Author::destroy(Input::get('id'));
+    return Redirect::route('authors')
+      ->with('message', 'The author was deleted successfully!');
+  }
+
+
 }
 
