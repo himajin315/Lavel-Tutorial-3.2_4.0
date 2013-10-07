@@ -9,5 +9,5 @@
   @endforeach
   </ul>
 
-    <p>{{ link_to_route('new_author', 'New Author') }}</p>
+    <p>{{ link_to_route('newAuthor', 'New Author') }}</p>
 @stop

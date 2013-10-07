@@ -29,7 +29,7 @@ class AuthorsController extends BaseController {
     $validation = Author::validate(Input::all());
 
     if ($validation->fails()){
-      return Redirect::route('new_author')->withErrors($validation)->withInput();
+      return Redirect::route('newAuthor')->withErrors($validation)->withInput();
     } else {
       Author::create(array(
         'name'=>Input::get('name'),
@@ -38,6 +38,37 @@ class AuthorsController extends BaseController {
       return Redirect::route('authors')
         ->with('message','The author was created successfully!');
     }
-   }
+  }
+
+  public function getEdit($id)
+  {
+    return View::make('authors.edit')
+      ->with('title', 'Edit Author')
+      ->with('author', Author::find($id));
+  }
+
+  public function putUpdate()
+  {
+    $id = Input::get('id');
+    $validation = Author::validate(Input::all());
+
+    if ($validation->fails()){
+      return Redirect::route('editAuthor', $id )->withErrors($validation);
+    } else {
+      $author = Author::find($id);
+      $author->name = Input::get('name');
+      $author->bio = Input::get('bio');
+      $author->save();
+      /*
+      Author::update(array(
+        'name'=>Input::get('name'),
+        'bio'=>Input::get('bio')
+      ));
+      */
+      return Redirect::route('author', $id)
+        ->with('message', 'Auhthor updated sucessfully!');
+    }
+  }
+
 }
 

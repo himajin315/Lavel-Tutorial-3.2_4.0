@@ -3,12 +3,7 @@
 @section('content')
   <h1>Add New Author</h1>
 
-  @if($errors->has())
-  <ul>
-    {{ $errors->first('name', '<li>:message</li>'); }}
-    {{ $errors->first('bio', '<li>:message</li>') }}
-  </ul>
-  @endif
+  @include('common.authorErrors')
 
   {{ Form::open(array('url' => 'authors/create', 'method' => 'post')) }}
   <p>

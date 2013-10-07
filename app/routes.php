@@ -19,8 +19,11 @@ Route::get('/', function()
 // laravel 4.0
 Route::get('authors', array('as'=>'authors', 'uses' => 'AuthorsController@getIndex'));
 Route::get('author/{id}', array('as'=>'author', 'uses' => 'AuthorsController@getView'));
-Route::get('authors/new', array('as'=>'new_author', 'uses' => 'AuthorsController@getNew'));
+Route::get('authors/new', array('as'=>'newAuthor', 'uses' => 'AuthorsController@getNew'));
 Route::post('authors/create', array('uses' => 'AuthorsController@postCreate'));
+Route::get('author/{id}/edit', array('as'=>'editAuthor', 'uses' => 'AuthorsController@getEdit'));
+Route::put('author/update', array('uses' => 'AuthorsController@putUpdate'));
+
 
 // laravel 3.2
 //Route::get('authors', array('uses' => 'author@index'));
