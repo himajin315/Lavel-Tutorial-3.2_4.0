@@ -3,6 +3,7 @@
 @section('content')
   <h1>Add New Author</h1>
 
+<<<<<<< HEAD
   @if($errors->has())
   <ul>
     {{ $errors->first('name', '<li>:message</li>'); }}
