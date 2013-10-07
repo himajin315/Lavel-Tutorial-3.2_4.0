@@ -20,12 +20,21 @@ Route::get('/', function()
 Route::get('authors', array('as'=>'authors', 'uses' => 'AuthorsController@getIndex'));
 Route::get('author/{id}', array('as'=>'author', 'uses' => 'AuthorsController@getView'));
 Route::get('authors/new', array('as'=>'newAuthor', 'uses' => 'AuthorsController@getNew'));
-Route::post('authors/create', array('uses' => 'AuthorsController@postCreate'));
+Route::post('authors/create', array('before'=>'crsf', 'uses' => 'AuthorsController@postCreate'));
 Route::get('author/{id}/edit', array('as'=>'editAuthor', 'uses' => 'AuthorsController@getEdit'));
-Route::put('author/update', array('uses' => 'AuthorsController@putUpdate'));
-Route::delete('author/delete', array('uses' => 'AuthorsController@deleteDestroy'));
+Route::put('author/update', array('before'=>'crsf','uses' => 'AuthorsController@putUpdate'));
+Route::delete('author/delete', array('before'=>'crsf','uses' => 'AuthorsController@deleteDestroy'));
 
 
 // laravel 3.2
 //Route::get('authors', array('uses' => 'author@index'));
 
+Route::get('profile', array('before' => 'auth', function()
+{
+  // Only authenticated users may enter...
+}));
+
+Route::post('register', array('before' => 'csrf', function()
+{
+  return 'You gave a valid CSRF token!';
+}));

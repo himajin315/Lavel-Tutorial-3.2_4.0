@@ -6,6 +6,7 @@
   @include('common.authorErrors')
 
   {{ Form::open(array('url' => 'authors/create', 'method' => 'post')) }}
+  {{ Form::token() }}
   <p>
     {{ Form::label('name','Name:') }}<br />
     {{ Form::text('name', Input::old('name')) }}

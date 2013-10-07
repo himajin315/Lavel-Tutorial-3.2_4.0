@@ -16,7 +16,20 @@ PHP Fatal error:  Class 'AddAuthors' not found in /src/cakephp/laravel-tutorial/
 {"error":{"type":"Symfony\\Component\\Debug\\Exception\\FatalErrorException","message":"Class 'AddAuthors' not found","file":"\/src\/cakephp\/laravel-tutorial\/vendor\/laravel\/framework\/src\/Illuminate\/Database\/Migrations\/Migrator.php","line":301}}
 ````
 ### Solution
-http://stackoverflow.com/questions/17174463/laravel-4-migrate-rollback-problems?answertab=oldest#tab-top
+[Laravel 4 migrate rollback problems](http://stackoverflow.com/questions/17174463/laravel-4-migrate-rollback-problems?answertab=oldest#tab-top)
+
+```
+"autoload": {
+    "classmap": [
+        "app/controllers",
+        "app/models",
+        "app/database/migrations"
+    ]
+},
+```
+```
+$ php composer.phar composer dump-autoload
+```
 
 
 

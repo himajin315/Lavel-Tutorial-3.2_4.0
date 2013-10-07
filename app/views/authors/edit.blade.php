@@ -1,12 +1,13 @@
 @extends('layouts.default')
 
 @section('content')
-  <h1>Editing {{ $author->name }}</h1>
+  <h1>Editing {{{ $author->name }}}</h1>
   
   @include('common.authorErrors')
 
   {{ Form::open(array('url' => 'author/update', 'method' => 'put')) }}
 
+  {{ Form::token() }}
   <p>
     {{ Form::label('name','Name:') }}<br />
     {{ Form::text('name', $author->name) }}
