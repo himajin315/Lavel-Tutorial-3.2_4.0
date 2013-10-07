@@ -17,4 +17,21 @@ class AuthorsController extends BaseController {
       ->with('title', 'Author View Page')
       ->with('authors', Author::find($id));
   }
+
+  public function getNew()
+  {
+    return View::make('authors.new')
+      ->with('title', 'Add New Author');
+  }
+
+  public function postCreate()
+  {
+    Author::create(array(
+      'name'=>Input::get('name'),
+      'bio'=>Input::get('bio')
+    ));
+    return Redirect::route('authors')
+      ->with('message','The author was created successfully!');
+   }
 }
+
